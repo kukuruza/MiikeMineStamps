@@ -81,14 +81,13 @@ The dataset is available under Creative Commons V4 license.
   
 If you find this work useful, please cite:
   
-@inproceedings{article,
-author = {Toropov, Evgeny and Buitrago, Paola and Prabha, Rajanie and Uran, Julian and Adal, Raja},
-year = {2021},
-title = {MiikeMineStamps: A Long-Tailed Dataset of JapaneseStamps via Active Learning},
-isbn = {},
-journal = {ICDAR '21: 16th International Conference on Document Analysis and Recognition},
-doi = {}
+<pre><code>@inproceedings{MiikeMineStamps,
+  author = {Toropov, Evgeny and Buitrago, Paola and Prabha, Rajanie and Uran, Julian and Adal, Raja},
+  year = {2021},
+  title = {MiikeMineStamps: A Long-Tailed Dataset of JapaneseStamps via Active Learning},
+  journal = {ICDAR '21: 16th International Conference on Document Analysis and Recognition},
 }
+</code></pre>
   
 <h3>Dataset structure</h3>
   
@@ -97,27 +96,27 @@ doi = {}
   Meta-information is available in two formats: json and SQLite database with Shuffler schema.
   Json is human-readable and easier to load with conventional tools, 
   Shuffler database format is easier to get various statistics.
-<\p>
+</p>
   
 <p>
   The following information is available for each image:
   <ul>
-    <li>"imagefile": the path to the image.</li>
-    <li>"name": stamp class name, see the conventions below.</li>
-    <li>"decade": the decade of the document where the stamp was originally placed.</li>
-    <li>"x_on_page": x coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
-    <li>"y_on_page": y coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
-    <li>"width_on_page": width of the stamp relative to the enclosing page (in range [0, 1]).</li>
-    <li>"height_on_page": height of the stamp relative to the enclosing page (in range [0, 1]).</li>
+    <li><code>imagefile</code>: the path to the image.</li>
+    <li><code>name</code>: stamp class name, see the conventions below.</li>
+    <li><code>decade</code>: the decade of the document where the stamp was originally placed.</li>
+    <li><code>x_on_page</code>: x coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
+    <li><code>y_on_page</code>: y coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
+    <li><code>width_on_page</code>: width of the stamp relative to the enclosing page (in range [0, 1]).</li>
+    <li><code>height_on_page</code>: height of the stamp relative to the enclosing page (in range [0, 1]).</li>
   </ul>
-<\p>
+</p>
   
 <p>
   The last four fields are recorded when pages can be identified in a photograph and the stamp is located inside one of the pages. 
   Some stamp classes are consistently located in one of the corners of their pages.
 </p>
   
-<h3>Conventions for stamp names<\h3>
+<h3>Conventions for stamp names</h3>
 
 <ul>
   <li>Stamp names are lowercase letters, underscores, and two special characters: "+" and "?".
