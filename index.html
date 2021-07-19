@@ -1,145 +1,208 @@
-<html>
-<head>
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-  <title>MiikeMineStamps dataset</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/png" href="favicon.png">
+        <title>MiikeMineStamps dataset</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+              crossorigin="anonymous">
 
-<h1>MiikeMineStamps</h1>
+    </head>
+    <body>
 
-<p>
-  This is an official webpage of MiikeMineStamps dataset.
-</p>
+        <div class="col-lg-8 mx-auto p-3 py-md-5">
+            <h1>MiikeMineStamps</h1>
 
-<p>
-  The MiikeMineStamps dataset is a naturally long-tailed open-ended dataset in the domain of Japanese historical documents. 
-  It contains 5056 images of Japanese stamps that belong to 407 classes including two special ones. 
-  The stamps were extracted from a large compendium of historical documents from the Japanese company Mitsui Mi’ike Mine, 
-  one of the largest business archives in modern Japan that spans half a century, includes tens of thousands of documents,
-  and has been widely used by labor historians, business historians, and others.
-</p>
+            <p>
+                This is an official webpage of MiikeMineStamps dataset.
+            </p>
 
-<p>
-  Link to the dataset: <a href="https://kilthub.cmu.edu/articles/dataset/MiikeMineStamps_Dataset/14604768">
-  https://kilthub.cmu.edu/articles/dataset/MiikeMineStamps_Dataset/14604768</a>.
-</p>
+            <p>
+                The MiikeMineStamps dataset is a naturally long-tailed open-ended dataset in the domain of Japanese
+                historical documents.
+                It contains 5056 images of Japanese stamps that belong to 407 classes including two special ones.
+                The stamps were extracted from a large compendium of historical documents from the Japanese company
+                Mitsui Mi’ike Mine, one of the largest business archives in modern Japan that spans half a century,
+                includes tens of thousands of documents, and has been widely used by labor historians, business
+                historians, and others.
+            </p>
 
-<h3>Info</h3>
- 
-<p>
-  The current version is v1.0. 
-</p>
+            <p>
+                Link to the dataset:
+                <a target="_blank" href="https://kilthub.cmu.edu/articles/dataset/MiikeMineStamps_Dataset/14604768">
+                    https://kilthub.cmu.edu/articles/dataset/MiikeMineStamps_Dataset/14604768</a>.
+            </p>
 
-<p>
-  The collection currently has 5056 images of 415 stamps collected from hundreds of documents. 
-  New versions will be published as our expert labels more images.
-</p>
+            <div class="mb-5">
+                <a target="_blank" href="https://kilthub.cmu.edu/articles/dataset/MiikeMineStamps_Dataset/14604768"
+                   class="btn btn-primary btn-lg px-4">Download Dataset</a>
+            </div>
 
-<p>
-  Figure 1 shows several examples of stamps.
-</p>
+            <h3>Info</h3>
 
-<figure>
-  <img src="img/demo.png" alt="Example images" align="center" width="681" height="379">
-  <figcaption>Figure 1. Examples of stamps in the dataset.</figcaption>
-</figure>
+            <p>
+                The current version is v1.0.
+            </p>
 
-<p>
-  The histogram of number of samples per stamp name is shown below. 
-  The dataset is collected via active learning, colors signify the cycle.
-</p>
+            <p>
+                The collection currently has 5056 images of 415 stamps collected from hundreds of documents.
+                New versions will be published as our expert labels more images.
+            </p>
 
-<figure>
-  <img src="img/campaign3to6.count.v8.ylog.png" alt="Histogram of stamp names."  align="center" width="1033" height="233">
-  <figcaption>Figure 2. Histogram of stamps by name. Note the log scale. Classes with 1 instance are not shown.</figcaption>
-</figure>
+            <p>
+                Figure 1 shows several examples of stamps.
+            </p>
 
-<h3>License</h3>
-  
-The dataset is available under Creative Commons V4 license.
-  
-If you find this work useful, please cite:
-  
-<pre><code>@inproceedings{MiikeMineStamps,
+            <div class="text-center">
+                <figure>
+                    <img class="img-fluid" src="img/demo.png" alt="Example images">
+                    <figcaption>Figure 1. Examples of stamps in the dataset.</figcaption>
+                </figure>
+            </div>
+
+            <p>
+                The histogram of number of samples per stamp name is shown below.
+                The dataset is collected via active learning, colors signify the cycle.
+            </p>
+
+            <div class="text-center">
+                <figure>
+                    <img class="img-fluid" src="img/campaign3to6.count.v8.ylog.png" alt="Histogram of stamp names.">
+                    <figcaption>Figure 2. Histogram of stamps by name. Note the log scale. Classes with 1 instance are
+                        not
+                        shown.
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h3>License</h3>
+
+            The dataset is available under Creative Commons V4 license.
+
+            If you find this work useful, please cite:
+
+            <pre><code>@inproceedings{MiikeMineStamps,
   author = {Toropov, Evgeny and Buitrago, Paola and Prabha, Rajanie and Uran, Julian and Adal, Raja},
   year = {2021},
   title = {MiikeMineStamps: A Long-Tailed Dataset of JapaneseStamps via Active Learning},
   journal = {ICDAR '21: 16th International Conference on Document Analysis and Recognition},
 }
 </code></pre>
-  
-<h3>Dataset structure</h3>
-  
-<p>
-  The dataset consists of 5056 cropped images of stamps (Figure 1) and the related meta-information. 
-  Meta-information is available in two formats: json and SQLite database with <a href="https://github.com/kukuruza/shuffler">Shuffler</a> schema.
-  Json is human-readable and easier to load with conventional tools, 
-  Shuffler database format is easier to get various statistics.
-</p>
-  
-<p>
-  The following information is available for each image:
-  <ul>
-    <li><code>imagefile</code>: the path to the image.</li>
-    <li><code>name</code>: stamp class name, see the conventions below.</li>
-    <li><code>decade</code>: the decade of the document where the stamp was originally placed.</li>
-    <li><code>x_on_page</code>: x coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
-    <li><code>y_on_page</code>: y coordinate of the stamp center relative to the enclosing page (in range [0, 1]).</li>
-    <li><code>width_on_page</code>: width of the stamp relative to the enclosing page (in range [0, 1]).</li>
-    <li><code>height_on_page</code>: height of the stamp relative to the enclosing page (in range [0, 1]).</li>
-  </ul>
-</p>
-  
-<p>
-  The last four fields are recorded when pages can be identified in a photograph and the stamp is located inside one of the pages. 
-  Some stamp classes are consistently located in one of the corners of their pages.
-</p>
-  
-<h3>Stamp names conventions</h3>
-  
-<p>
-  Stamp names are usually based on the phonetic reading of the Japanese characters using a modified Hepburn system.
-  There are several exceptions to this, however.  First, stamps that ask different catefories of users such as branch head, secretary, etc. to certify a document by placing their stamp in a particular place are collectively labeled "stamphere."  Second, 
-</p>
-  
-<ul>
-  <li>Stamp names are lowercase letters, underscores, and two special characters: "+" and "?".
-    Stamp names are usually based on the phonetic reading of the Japanese characters using a modified Hepburn system.</li>
-  <li>Most names contain only letters, e.g. "kuru".</li>
-  <li>"+" in a name means that only one half of a stamp is visible, because two conforming documents were stamped together. 
-    Only the top of a stamp is visible if "+" is after the stamp name (e.g. 'kei+'), 
-    and only the bottom of a stamp is visible if "+" before the stamp name (e.g. '+kei').</li>
-  <li>There are pairs of identical stamp names, one of which ends with the suffix "_east", e.g. "itou" and "itou_east".
-    These are the names of two different individuals who have the same phonetic reading in English, 
-    such as 伊藤 and 伊東, both of which are read as itou.  
-    They are referred to as "itou" and "itou_east" in reference to the second Chinese character of the name.</li>
-  <li>"?" in a name (e.g."oomuta?unhontenin") means that one symbol in a stamp was not recognized.</li>
-  <li>Name "??" is a special name that means that a stamp was not recognized.</li>
-  <li>Name "+??" is a special name that means that a stamp was not recognized and only its bottom is visible.</li>
-  <li>Name "stamphere" is a special name. Stamps that ask different catefories of users such as branch head, secretary, etc. 
-    to certify a document by placing their stamp in a particular place are collectively labeled "stamphere."</li>
-</ul> 
-  
-<h3>Funding</h3>
-  
-<ul>
-  <li><a href="https://app.dimensions.ai/details/grant/grant.5540022">NSF grant #1548562</a>
-    XSEDE 2.0: Integrating, Enabling and Enhancing National Cyberinfrastructure with Expanding Community Involvement</li>
-  <li><a href="https://app.dimensions.ai/details/grant/grant.3852784">NSF grant #1445606</a>
-    Bridges: From Communities and Data to Workflows and Insight</li>
-  <li><a href="https://app.dimensions.ai/details/grant/grant.8522465">NSF grant #1928147</a>
-    Category I: Bridges-2: Scalable Converged Computing, Data, and Analytics for Rapidly Evolving Science and Engineering Research</li>
-</ul>
-  
-<h3>Acknowledgements</h3>
-  
-<p>
-  This work used the Extreme Science and Engineering Discovery Environment (XSEDE), 
-  which is supported by National Science Foundation grant number ACI-1548562. 
-  Specifically, it used the Bridges and Bridges-2 systems, which are supported by NSF award 
-  number ACI-1445606 and ACI-1928147, at the Pittsburgh Supercomputing Center (PSC). 
-  The work was made possible through the XSEDE Extended Collaborative Support Service (ECSS) program.
-</p>
-  
-</body>
+
+            <h3>Dataset structure</h3>
+
+            <p>
+                The dataset consists of 5056 cropped images of stamps (Figure 1) and the related meta-information.
+                Meta-information is available in two formats: json and SQLite database with <a
+                    href="https://github.com/kukuruza/shuffler">Shuffler</a> schema.
+                Json is human-readable and easier to load with conventional tools,
+                Shuffler database format is easier to get various statistics.
+            </p>
+
+            <p>
+                The following information is available for each image:
+            <ul>
+                <li><code>imagefile</code>: the path to the image.</li>
+                <li><code>name</code>: stamp class name, see the conventions below.</li>
+                <li><code>decade</code>: the decade of the document where the stamp was originally placed.</li>
+                <li><code>x_on_page</code>: x coordinate of the stamp center relative to the enclosing page (in range
+                    [0,
+                    1]).
+                </li>
+                <li><code>y_on_page</code>: y coordinate of the stamp center relative to the enclosing page (in range
+                    [0,
+                    1]).
+                </li>
+                <li><code>width_on_page</code>: width of the stamp relative to the enclosing page (in range [0, 1]).
+                </li>
+                <li><code>height_on_page</code>: height of the stamp relative to the enclosing page (in range [0, 1]).
+                </li>
+            </ul>
+            </p>
+
+            <p>
+                The last four fields are recorded when pages can be identified in a photograph and the stamp is located
+                inside one of the pages.
+                Some stamp classes are consistently located in one of the corners of their pages.
+            </p>
+
+            <h3>Stamp names conventions</h3>
+
+            <p>
+                Stamp names are usually based on the phonetic reading of the Japanese characters using a modified
+                Hepburn
+                system.
+                There are several exceptions to this, however. First, stamps that ask different catefories of users such
+                as
+                branch head, secretary, etc. to certify a document by placing their stamp in a particular place are
+                collectively labeled "stamphere." Second,
+            </p>
+
+            <ul>
+                <li>Stamp names are lowercase letters, underscores, and two special characters: "+" and "?".
+                    Stamp names are usually based on the phonetic reading of the Japanese characters using a modified
+                    Hepburn system.
+                </li>
+                <li>Most names contain only letters, e.g. "kuru".</li>
+                <li>"+" in a name means that only one half of a stamp is visible, because two conforming documents were
+                    stamped together.
+                    Only the top of a stamp is visible if "+" is after the stamp name (e.g. 'kei+'),
+                    and only the bottom of a stamp is visible if "+" before the stamp name (e.g. '+kei').
+                </li>
+                <li>There are pairs of identical stamp names, one of which ends with the suffix "_east", e.g. "itou" and
+                    "itou_east".
+                    These are the names of two different individuals who have the same phonetic reading in English,
+                    such as 伊藤 and 伊東, both of which are read as itou.
+                    They are referred to as "itou" and "itou_east" in reference to the second Chinese character of the
+                    name.
+                </li>
+                <li>"?" in a name (e.g."oomuta?unhontenin") means that one symbol in a stamp was not recognized.</li>
+                <li>Name "??" is a special name that means that a stamp was not recognized.</li>
+                <li>Name "+??" is a special name that means that a stamp was not recognized and only its bottom is
+                    visible.
+                </li>
+                <li>Name "stamphere" is a special name. Stamps that ask different catefories of users such as branch
+                    head,
+                    secretary, etc.
+                    to certify a document by placing their stamp in a particular place are collectively labeled
+                    "stamphere."
+                </li>
+            </ul>
+
+            <h3>Funding</h3>
+
+            <ul>
+                <li><a href="https://app.dimensions.ai/details/grant/grant.5540022">NSF grant #1548562</a>
+                    XSEDE 2.0: Integrating, Enabling and Enhancing National Cyberinfrastructure with Expanding Community
+                    Involvement
+                </li>
+                <li><a href="https://app.dimensions.ai/details/grant/grant.3852784">NSF grant #1445606</a>
+                    Bridges: From Communities and Data to Workflows and Insight
+                </li>
+                <li><a href="https://app.dimensions.ai/details/grant/grant.8522465">NSF grant #1928147</a>
+                    Category I: Bridges-2: Scalable Converged Computing, Data, and Analytics for Rapidly Evolving
+                    Science
+                    and Engineering Research
+                </li>
+            </ul>
+
+            <h3>Acknowledgements</h3>
+
+            <p>
+                This work used the Extreme Science and Engineering Discovery Environment (XSEDE),
+                which is supported by National Science Foundation grant number ACI-1548562.
+                Specifically, it used the Bridges and Bridges-2 systems, which are supported by NSF award
+                number ACI-1445606 and ACI-1928147, at the Pittsburgh Supercomputing Center (PSC).
+                The work was made possible through the XSEDE Extended Collaborative Support Service (ECSS) program.
+            </p>
+        </div>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+
+    </body>
 </html>
